@@ -148,3 +148,10 @@ body.theme-light .record{background:repeating-radial-gradient(circle at center,#
 body.theme-light .hole{background:#c9c2b6;box-shadow:0 0 0 2px rgba(0,0,0,0.15)}
 body.theme-light .play-btn{background:rgba(255,255,255,0.85);color:#1c1a17;box-shadow:0 4px 16px rgba(0,0,0,0.15)}
 body.theme-light .play-btn:hover{background:#ffffff}
+
+/* ===== Similar artists ===== */
+.similar{margin-top:14px;font-size:13px;line-height:1.5;color:var(--muted)}
+.similar[hidden]{display:none !important}
+.similar-label{text-transform:uppercase;letter-spacing:0.08em;font-size:11px;color:var(--accent);margin-right:6px}
+.similar a,.similar span.item{color:var(--fg);text-decoration:none;border-bottom:1px dotted rgba(255,255,255,0.25);cursor:default}
+body.theme-light .similar a,body.theme-light .similar span.item{border-bottom-color:rgba(0,0,0,0.2)}
