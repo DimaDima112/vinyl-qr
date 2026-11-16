@@ -42,7 +42,7 @@ body {
   letter-spacing: 0.08em;
 }
 
-.record-wrap {
+.record-wrap { position: relative;
   position: relative;
   width: 260px;
   height: 260px;
@@ -153,3 +153,24 @@ body.theme-light .play-btn:hover{background:#ffffff}
 .similar-label{text-transform:uppercase;letter-spacing:0.08em;font-size:11px;color:var(--accent);margin-right:6px}
 .similar a,.similar span.item{color:var(--fg);text-decoration:none;border-bottom:1px dotted rgba(255,255,255,0.25);cursor:default}
 body.theme-light .similar a,body.theme-light .similar span.item{border-bottom-color:rgba(0,0,0,0.2)}
+
+/* ===== Fade-in ===== */
+.card{opacity:0;transform:translateY(8px);transition:opacity .6s ease,transform .6s ease}
+.card.ready{opacity:1;transform:none}
+
+/* ===== Vinyl shine ===== */
+.record-wrap::after{content:"";position:absolute;inset:0;border-radius:50%;pointer-events:none;background:linear-gradient(135deg,rgba(255,255,255,0.18) 0%,rgba(255,255,255,0) 35%,rgba(255,255,255,0) 65%,rgba(255,255,255,0.10) 100%);mix-blend-mode:screen}
+body.theme-light .record-wrap::after{background:linear-gradient(135deg,rgba(255,255,255,0.35) 0%,rgba(255,255,255,0) 40%,rgba(255,255,255,0) 60%,rgba(0,0,0,0.08) 100%)}
+
+/* ===== Skeleton ===== */
+.skeleton{background:linear-gradient(90deg,rgba(255,255,255,0.06) 25%,rgba(255,255,255,0.12) 37%,rgba(255,255,255,0.06) 63%);background-size:400% 100%;animation:shimmer 1.4s ease infinite;border-radius:6px}
+body.theme-light .skeleton{background:linear-gradient(90deg,rgba(0,0,0,0.06) 25%,rgba(0,0,0,0.10) 37%,rgba(0,0,0,0.06) 63%);background-size:400% 100%}
+@keyframes shimmer{0%{background-position:100% 0}100%{background-position:0 0}}
+.sk-title{height:24px;width:60%;margin:0 auto}
+.sk-artist{height:14px;width:40%;margin:8px auto 0}
+.sk-cover{width:150px;height:150px;border-radius:50%;margin:40px auto}
+.sk-desc{height:12px;width:80%;margin:0 auto}
+
+/* ===== Tonearm ===== */
+.tonearm{position:absolute;top:-18px;right:-18px;width:90px;height:90px;transform-origin:85% 15%;transform:rotate(-25deg);transition:transform .5s ease;pointer-events:none;z-index:5;opacity:0.9}
+.record-wrap.playing .tonearm{transform:rotate(0deg)}

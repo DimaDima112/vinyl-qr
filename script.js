@@ -7,6 +7,7 @@ const id = params.get("id");
 const $ = (s) => document.querySelector(s);
 
 async function init() {
+  showSkeleton();
   if (!id) return showError();
   let albums;
   try {
@@ -19,6 +20,7 @@ async function init() {
   $("#title").textContent = album.title;
   $("#artist").textContent = album.artist;
   $("#description").textContent = album.description || "";
+  hideSkeleton();
   $("#meta").textContent = [album.artist, album.year].filter(Boolean).join(" \u00b7 ");
   $("#cover").style.backgroundImage = "url('" + album.cover + "')";
   renderSimilar(album);
@@ -31,6 +33,7 @@ async function init() {
 
   function setPlaying(on) {
     record.classList.toggle("playing", on);
+    document.querySelector(".record-wrap").classList.toggle("playing", on);
     playIcon.style.display = on ? "none" : "";
     pauseIcon.style.display = on ? "" : "none";
   }
@@ -67,3 +70,17 @@ function showError() {
 
 init();
 document.getElementById("themeToggle") && document.getElementById("themeToggle").addEventListener("click", toggleTheme);
+
+document.querySelector(".card") && document.querySelector(".card").classList.add("ready");
+
+function showSkeleton() {
+  var t = document.getElementById("title");
+  var a = document.getElementById("artist");
+  if (t) { t.textContent = ""; t.classList.add("sk-title","skeleton"); }
+  if (a) { a.textContent = ""; a.classList.add("sk-artist","skeleton"); }
+}
+function hideSkeleton() {
+  ["title","artist"].forEach(function(id){ var el=document.getElementById(id); if(el){el.classList.remove("sk-title","sk-artist","skeleton");} });
+}
+
+(function(){ var c=document.querySelector(".card"); if(c) c.classList.add("ready"); })();
