@@ -17,6 +17,14 @@ async function init() {
   const album = albums[id];
   if (!album) return showError();
   document.title = album.title + " \u2014 " + album.artist;
+  
+  var genreEl = document.getElementById("genre");
+  if (genreEl) {
+    var tags = [];
+    if (album.genre) tags.push("# " + album.genre);
+    if (album.style) album.style.split(",").forEach(function(x){ x=x.trim(); if(x) tags.push("# " + x); });
+    genreEl.textContent = tags.join("  ");
+  }
   $("#title").textContent = album.title;
   $("#artist").textContent = album.artist;
   $("#description").textContent = album.description || "";

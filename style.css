@@ -174,3 +174,7 @@ body.theme-light .skeleton{background:linear-gradient(90deg,rgba(0,0,0,0.06) 25%
 /* ===== Tonearm ===== */
 .tonearm{position:absolute;top:-18px;right:-18px;width:90px;height:90px;transform-origin:85% 15%;transform:rotate(-25deg);transition:transform .5s ease;pointer-events:none;z-index:5;opacity:0.9}
 .record-wrap.playing .tonearm{transform:rotate(0deg)}
+
+/* ===== Genre ===== */
+.genre{margin-bottom:6px;font-size:12px;letter-spacing:0.04em;color:var(--accent);text-transform:lowercase}
+.genre:empty{display:none}
