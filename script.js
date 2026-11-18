@@ -8,6 +8,7 @@ const $ = (s) => document.querySelector(s);
 
 async function init() {
   showSkeleton();
+    var errEl = document.getElementById("error"); if (errEl) errEl.hidden = true;
   if (!id) return showError();
   let albums;
   try {
@@ -29,7 +30,8 @@ async function init() {
   $("#artist").textContent = album.artist;
   $("#description").textContent = album.description || "";
   hideSkeleton();
-  $("#meta").textContent = [album.artist, album.year].filter(Boolean).join(" \u00b7 ");
+  var yearStr = album.year ? String(album.year).replace(/\.0$/, "") : "";
+  $("#meta").textContent = [album.artist, yearStr].filter(Boolean).join(" · ");
   $("#cover").style.backgroundImage = "url('" + album.cover + "')";
   renderSimilar(album);
 
