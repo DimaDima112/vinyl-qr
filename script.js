@@ -1,3 +1,5 @@
+// Theme toggle binding (early)
+document.addEventListener("DOMContentLoaded", function(){ var b=document.getElementById("themeToggle"); if(b) b.addEventListener("click", toggleTheme); });
 // ===== Theme =====
 (function(){var t=localStorage.getItem('theme')==='light'?'light':'dark';document.body.classList.add('theme-'+t);})();
 function toggleTheme(){var isLight=document.body.classList.contains('theme-light');var next=isLight?'dark':'light';document.body.classList.remove('theme-light','theme-dark');document.body.classList.add('theme-'+next);localStorage.setItem('theme',next);}

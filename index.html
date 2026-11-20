@@ -3,14 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-  <title>Прослушивание</title>
+  <title>Џа®б«гиЁў ­ЁҐ</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <button id="themeToggle" class="theme-toggle" aria-label="Theme">
-    <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="4" fill="currentColor"/><g stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="2" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2
-    <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
-  </button>
+  <button id="themeToggle" class="theme-toggle" aria-label="Theme"><span class="icon-sun">☀</span><span class="icon-moon">☾</span></button>
 
   <main class="card">
     <header class="header">
@@ -32,12 +29,8 @@
         </svg>
       </div>
       <button class="play-btn" id="playBtn" aria-label="Play/Pause">
-        <svg id="playIcon" viewBox="0 0 24 24" width="28" height="28">
-          <path fill="currentColor" d="M8 5v14l11-7z"/>
-        </svg>
-        <svg id="pauseIcon" viewBox="0 0 24 24" width="28" height="28" style="display:none">
-          <path fill="currentColor" d="M6 5h4v14H6zM14 5h4v14h-4z"/>
-        </svg>
+        <svg id="playIcon" viewBox="0 0 24 24" width="28" height="28"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>
+        <svg id="pauseIcon" viewBox="0 0 24 24" width="28" height="28" style="display:none"><path fill="currentColor" d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
       </button>
     </div>
 
@@ -45,7 +38,7 @@
       <p id="description"></p>
       <p id="meta" class="meta"></p>
       <div id="similar" class="similar" hidden>
-        <span class="similar-label">Похожие исполнители:</span>
+        <span class="similar-label">Џ®е®¦ЁҐ ЁбЇ®«­ЁвҐ«Ё:</span>
         <span id="similar-list"></span>
       </div>
     </footer>
@@ -54,7 +47,7 @@
   </main>
 
   <div id="error" class="error" hidden>
-    <p>Диск не найден. Проверь QR-код.</p>
+    <p>„ЁбЄ ­Ґ ­ ©¤Ґ­.<br>Џа®ўҐам QR-Є®¤.</p>
   </div>
 
   <script src="script.js"></script>
