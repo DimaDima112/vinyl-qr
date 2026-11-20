@@ -188,3 +188,14 @@ body.theme-light .theme-toggle .icon-moon{display:none !important}
 
 /* ===== Light theme (vars) ===== */
 body.theme-light{--bg:#f5f1ea;--fg:#1c1a17;--muted:#6b655c;--accent:#b8860b;background:radial-gradient(circle at 50% 0%,#ffffff 0%,var(--bg) 70%);color:var(--fg)}
+
+/* ===== Text contrast (force) ===== */
+body.theme-dark{--fg:#ffffff;--muted:#c8c8d0;--accent:#ffd166}
+body.theme-light{--fg:#0f0e0c;--muted:#3f3a33;--accent:#8a5a00}
+.header h1,#title{color:var(--fg) !important;text-shadow:0 0 1px rgba(0,0,0,0.15)}
+.header p,#artist{color:var(--muted) !important}
+.info p,#description{color:var(--fg) !important;opacity:1 !important}
+#meta{color:var(--accent) !important;font-weight:600}
+.similar{color:var(--muted) !important}
+.similar .item{color:var(--fg) !important;border-bottom-color:currentColor !important}
+.genre{color:var(--accent) !important;font-weight:600}
